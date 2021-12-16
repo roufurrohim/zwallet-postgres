@@ -13,10 +13,26 @@ const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
   },
 });
 
+const sequelizeHeroku = new Sequelize({
+  database: process.env.POSTGRES_DB,
+  username: process.env.POSTGRES_USER,
+  password: process.env.POSTGRES_PASSWORD,
+  host: process.env.POSTGRES_HOST,
+  port: process.env.POSTGRES_PORT,
+  dialect: "postgres",
+  dialectOptions: {
+    ssl: {
+      require: true,
+      rejectUnauthorized: false,
+    },
+  },
+});
+
 const db = {};
 
 db.Sequelize = Sequelize;
-db.sequelize = sequelize;
+// db.sequelize = sequelize || sequelizeHeroku;
+db.sequelize = sequelizeHeroku;
 
 db.users = require("../models/users.model")(sequelize, Sequelize);
 db.transactions = require("../models/transactions.model")(sequelize, Sequelize);
