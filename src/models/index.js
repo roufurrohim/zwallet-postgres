@@ -20,6 +20,9 @@ const sequelizeHeroku = new Sequelize({
   host: process.env.POSTGRES_HOST,
   port: process.env.POSTGRES_PORT,
   dialect: "postgres",
+  production: {
+    use_env_variable: process.env.DATABASE_URL,
+  },
   dialectOptions: {
     ssl: {
       require: true,
