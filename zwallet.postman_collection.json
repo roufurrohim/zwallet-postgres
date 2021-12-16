@@ -1,0 +1,438 @@
+{
+	"info": {
+		"_postman_id": "97e680de-8079-46c9-940c-61e861e45ef4",
+		"name": "zwallet",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"first_name\": \"ana\",\n    \"last_name\": \"jamil\",\n    \"email\": \"ana2@mail\",\n    \"password\": \"123\",\n    \"phone\": \"0812345\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4004/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4004",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"ana@mail\",\n    \"password\": \"123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4004/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4004",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "setup PIN",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjM1MzQ4Njk3fQ.TQQ_LqeeEpd-IP7XxVab8k23-6C6z-n6v1lonZV5GQU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"pin\": \"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4004/setpin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4004",
+					"path": [
+						"setpin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNjM0Nzk1ODcwfQ.rFswxfBcu3fEut2IPWqatbUhLVgabifoYpSLKb9hGYI",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:4004/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4004",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update users",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNjM0Nzk1ODcwfQ.rFswxfBcu3fEut2IPWqatbUhLVgabifoYpSLKb9hGYI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "first_name",
+							"value": "sirona",
+							"type": "text"
+						},
+						{
+							"key": "last_name",
+							"value": "rouf",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "ana2@mail.com",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "6285712999264",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/home/mbr/Downloads/1626019426470.jpg"
+						},
+						{
+							"key": "descriptions",
+							"value": "lorem ippdsfhjdsfyduisf sdjfhgsfhsdbfdsbfsdnmfsdhfg uskdfgsdhfghsdvfbsdfuynbfvdbnfvbsd ksfduggd",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:4004/update ",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4004",
+					"path": [
+						"update "
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all transaction",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNjM1MDY1MTcyfQ.1NDW00LOqEyoyeD6fVMXC_n3wVAMCkCstAjQ3MsTXhU",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:4004/all-transactions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4004",
+					"path": [
+						"all-transactions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "top up",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjM0OTE0NTg0fQ.dnoeamKFsb2rzkK1l47U9qnmFpWP53xJBE91TqIFcQQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"receiver\": 4,\n    \"amount\": 20000,\n    \"balance\": 0,\n    \"notes\": \"buy 1\",\n    \"type\": \"Top Up\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4004/topup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4004",
+					"path": [
+						"topup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "transfer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjM0OTE0NTg0fQ.dnoeamKFsb2rzkK1l47U9qnmFpWP53xJBE91TqIFcQQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"receiver\": 4,\n    \"amount\": 10000,\n    \"balance\": 30000,\n    \"notes\": \"buy 1\",\n    \"type\": \"Transfer\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4004/transfer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4004",
+					"path": [
+						"transfer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get details user",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjM1MDg2MzMzfQ.hTWfe1TwDl4Cun2NY1XHLOnlV-SGri7OcpjIK_60lVc",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:4004/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4004",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get income",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjM1MTg4NjkwfQ.cf0C3hSir7Htqy_pY-DwsJgxkH2AJlhekb8m-doh6n4",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:4004/all-income",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4004",
+					"path": [
+						"all-income"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get expense",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjM1MTg4NjkwfQ.cf0C3hSir7Htqy_pY-DwsJgxkH2AJlhekb8m-doh6n4",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:4004/all-expense",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4004",
+					"path": [
+						"all-expense"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get details users",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjM0OTE0NTg0fQ.dnoeamKFsb2rzkK1l47U9qnmFpWP53xJBE91TqIFcQQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:4004/user/9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4004",
+					"path": [
+						"user",
+						"9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pin",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjM1MzIyMjQxfQ.Qf0Jqy3mfPhKy70m1daJhQg959BwFM1pQOF91BnK83s",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"pin\": \"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4004/pin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4004",
+					"path": [
+						"pin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get details transactions",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjM0OTE0NTg0fQ.dnoeamKFsb2rzkK1l47U9qnmFpWP53xJBE91TqIFcQQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:4004/details-transactions/17",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4004",
+					"path": [
+						"details-transactions",
+						"17"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
